@@ -1,0 +1,477 @@
+*{
+    font-style: times new roman;
+}
+
+body.index{
+    display : grid;
+    background-color: wheat;
+    grid-template-areas: 
+    "header"
+    "overview"
+    "recenttransaction"
+    "quickactions";
+
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    gap : 20px;
+}
+
+.card{
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* gap : 20px; */
+}
+
+body.add.dark, body.index.dark, body.trans.dark, body.stat.dark{
+    background-color: #121212;
+    color: white;
+}
+
+body.add.dark .card, body.index.dark .card, body.trans.dark .card, body.stat.dark .card{
+    background-color: #333;
+    color: white;
+}
+
+body.add.dark .button, body.index.dark .button, body.trans.dark .button, body.stat.dark .button{
+    color: white;
+    background-color: transparent;
+    transition: 0.3s ease;
+}
+
+body.add.dark .button:hover, body.index.dark .button:hover, body.trans.dark .button:hover, body.stat.dark .button:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: black;
+    color : white;
+}
+
+header{
+    grid-area: header;
+    display: grid;
+
+    grid-template-areas: 
+    "logo nav theme"
+    "h1 newMonth setting";
+
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    background-color:#0049B7;
+    padding: 20px;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    border: none;
+    border-radius: 20px;
+}
+
+#logo{
+    grid-area: logo;
+    width: 100px;
+    height: 100px;
+    mix-blend-mode: multiply;
+    
+}
+header h1{
+    grid-area: h1;
+    font-size: 25px;
+    color: white;
+}
+
+nav{
+    grid-area: nav;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap : 20px;
+}
+
+#newMonth{
+    grid-area: newMonth;
+}
+
+#setting{
+    grid-area: setting;
+}
+
+.button{
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+}
+
+.button:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: black;
+    color : white;
+}
+
+.toggle-theme{
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+    height: 50px;
+    width: 150px;
+    justify-content: center;
+}
+
+.toggle-theme:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: #333;
+}  
+
+#overview{
+    grid-area: overview;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+#recenttransaction{
+    grid-area: recenttransaction;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    gap : 20px;
+}
+
+#quickactions{
+    grid-area: quickactions;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-evenly;
+    padding: 20px;
+    align-items: center;
+    font-size: 20px;
+}
+
+#action{
+    display: flex;
+    justify-content:center;
+    width: 100%;
+    align-items: center;
+}
+
+ 
+
+.btn{
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    border-radius: 20px;
+    height : 100px;
+    width : 100px;
+    font-size: 60px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover{
+    box-shadow: 2px 4px 8px rgb(0, 0, 0);
+    background-color: transparent;
+}
+
+body.add{
+    background-color: wheat;
+    display: grid;
+
+    grid-template-areas: 
+    "header header"
+    "financialactivity addtrans";
+
+    grid-template-columns: 30% 1fr;
+    grid-template-rows: auto 1fr;
+    gap : 20px;
+    min-height: 100vh;
+    
+}
+
+body.add header{
+    grid-area: header;
+}
+
+body.add #financialactivity{
+    grid-area: financialactivity;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% auto;
+    justify-content: center;
+    align-items: center;
+    gap : 10px;
+    overflow-y: auto;
+    max-height:75vh;
+}
+
+.transaction{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border : none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.64);
+    border-radius: 20px;
+    transition: 0.3s ease;
+    width: 100%;
+    flex-shrink: auto;
+}
+
+body.add #addtrans{
+    grid-area: addtrans;
+    display: flex;
+    flex-direction: column;
+    gap : 10px;
+}
+
+.input{
+    padding: 10px;
+    border: 1px solid inherit;
+    border-radius: 20px;
+    font-size: 18px;
+    background-color: transparent;
+    color : inherit;
+    transition: 0.3s ease;
+    height: 18px;
+    height: auto;
+    width: 600px;
+
+}
+
+.input:focus{
+    outline: black solid 1px;
+    box-shadow: 0 4px 8px rgb(29, 10, 10);
+    background-color: transparent;
+}
+
+
+body.add.dark #addtrans .input{
+    background-color: transparent;
+    color : white;
+    border: 1px solid white;
+}
+
+body.trans{
+    background-color: wheat;
+    display: grid;
+
+    grid-template-areas: 
+    "header"
+    "searchbar"
+    "filter"
+    "transactions";
+
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    gap : 20px;
+}
+
+body.trans header{
+    grid-area: header;
+}
+
+body.trans #searchbar{
+    grid-area: searchbar;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.trans #filter{
+    grid-area: filter;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+body.trans #transactions{
+    grid-area: transactions;
+
+    display: flex;
+    gap: 20px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    flex-wrap: nowrap;
+
+    align-items: center;
+}
+
+body.trans #transactions .transaction{
+    width: 300px;
+    min-width: 300px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.64);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.deletebtn{
+    transition: 0.3s ease;
+}
+
+.deletebtn:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.64);
+    background-color: red;
+    color : white;
+}
+
+body.stat{
+    background-color: wheat;
+    display: grid;
+
+    grid-template-areas: 
+    "header"
+    "summary"
+    "expensebycategory"
+    "income-expense"
+;
+
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    gap : 20px;
+}
+
+body.stat header{
+    grid-area: header;
+}
+
+body.stat #summarycards{
+    grid-area: summary;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+body.stat #summmarycards p{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body.stat #expensebycat{
+    grid-area: expensebycategory;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap : 20px;
+
+ 
+}
+.category-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap : 20px;
+}
+
+.category-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap : 20px;
+}
+
+.bar-container{
+    width: 70%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.bar{
+    height: 100%;
+    background-color: #4CAF50;
+    border-radius: 20px;
+}
+
+body.stat #income-expense{
+    grid-area: income-expense;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap : 20px;
+}
+
+.card-title{
+    font-size: 20px;
+}
+
+.edit-type, .edit-amount, .edit-category, .edit-description, .edit-date{
+    background-color: transparent;
+    color : inherit;
+    height : 26px;
+    width: 80%;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.64);
+    border-radius: 20px;
+    
+}
+
+#settings-panel{
+
+    position: fixed;
+
+    top: 120px;
+    right: 30px;
+
+    width: 300px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    z-index: 1000;
+
+}
+
+.hidden{
+
+    display: none !important;
+
+}
+
+.settingsinput{
+    padding: 10px;
+    border: 1px solid inherit;
+    border-radius: 20px;
+    font-size: 18px;
+    background-color: transparent;
+    color : inherit;
+    transition: 0.3s ease;
+    height: 18px;
+    height: auto;
+    width: auto;
+}
+
+.limit{
+    color : red;
+}
+
+.button.limitbtn{
+    background-color: transparent;
+    color : red !important;
+}
+
+.bar.limitbar{
+    background-color: red;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="js/add.js"></script>
+</head>
+<body class = "add light">
+
+    <header>
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvwSo_IDWBaLemSkxPL7o142JAUYhO0guthg&s" id= "logo" class = "card">
+        <h1>Finance Tracker</h1>
+
+        <nav>
+            <button class = "button" onclick="window.location.href='dash.html'">Dashboard</button>
+            <button class = "button" onclick="window.location.href='add.html'">Add</button>
+            <button class = "button" onclick="window.location.href='transactions.html'">Transactions</button>
+            <button class = "button" onclick="window.location.href='statistics.html'">Statistics</button>
+        </nav>
+
+        <button class="button" id = "newMonth">Start New Month</button>
+        <button class = "button" id = "theme-toggle">☀ | 🌙</button>
+        <button class = "button" id = "settings-toggle">⚙</button>
+    </header>
+
+    <div id="financialactivity" class = "card">
+
+    </div>
+
+    <div id="addtrans" class = "card">
+        <h2>Add Transaction</h2>
+        <label for="type">Type</label> 
+        <select name="type" id="type" class = "input">
+            <!-- the select option is a default one -->
+            <option value="" selected hidden>Select</option> 
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+        </select>
+
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" name="amount" placeholder="Enter amount" class = "input">
+
+        <label for="category">Category</label>
+        <input type="text" id="category" name="category" placeholder="Enter category" class = "input">
+
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" placeholder="Enter description" class = "input">
+
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" class = "input">
+
+        <button class = "button" id = "addtransbtn">Add Transaction</button>
+    </div>
+
+
+</body>
+</html>
