@@ -23,19 +23,28 @@ settingsButton.addEventListener('click', settings);
 
 
 function limit() {
-    const limit = getMonthlyLimit();
 
-    const expense = searchTransactions("expense");
-    const totalExpense = expense.reduce((acc, transaction) => acc + transaction.amount, 0);
+    const monthlyLimit =
+    getMonthlyLimit();
 
-    if (limit === null) {
+    if (
+        monthlyLimit === null ||
+        monthlyLimit === undefined
+    ) {
         return false;
-    } 
-    else if (totalExpense > limit) {
-        alert("You have exceeded your monthly expenditure limit!");
-        return true;
     }
-    return false;
+
+    const totalExpense =
+    searchTransactions("expense")
+    .reduce(
+        (acc, transaction) =>
+        acc + transaction.amount,
+        0
+    );
+
+    return totalExpense >
+    monthlyLimit;
+
 }
 
 function loadTransactions(type = "") {
